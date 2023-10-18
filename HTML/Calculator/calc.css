@@ -1,0 +1,39 @@
+/* Universal selector to provide default padding and margin */
+*{
+    margin:0px;
+    padding:0px;
+}
+
+/* styling heading element */
+h1{
+    text-align: center;
+    margin:80px 80px 10px 80px;
+    
+}
+/* \styling outer container with width and  height*/
+.container{
+    padding:20px;
+    width:300px;
+    margin:auto;
+    border:1px solid black;
+    height:250px;
+    box-shadow: 5px 6px 5px -3px rgba(0,0,0,0.75);
+}
+
+/* styling input field of type text with required width and height */
+input[type="text"]{
+    width:210px;
+    height:40px;
+    border:none;
+    padding:5px;
+    background-color: rgb(218, 218, 235)
+}
+
+/* styling all button elements */
+input[type="button"]{
+    width:70px;
+    height:45px;
+    margin-bottom: 5px;
+    padding:5px;
+    border:none;
+}

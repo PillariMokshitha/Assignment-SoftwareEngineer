@@ -1,0 +1,23 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+
+.container{
+    width:900px;
+    margin:auto;
+    /* border:2px solid blue; */
+    background-color: rgb(66, 174, 241);
+    
+}
+
+form{
+    width:600px;
+    margin-left: 150px;
+    background-color: aliceblue;
+
+}
+.inputs{
+    display:flex;
+    
+}

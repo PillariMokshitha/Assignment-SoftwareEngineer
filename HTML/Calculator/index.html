@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link tag to link external css file -->
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <!-- container to include all elements inside it -->
+    <div class="container">
+        <!-- first row with elements -->
+        <div class="row1">
+        <input type="text" id="result">
+        <input type="button" value="AC" onclick="clearall()">
+        </div>
+
+        <!-- Implementation of all buttons -->
+        <div>
+        <input type="button" value="7" onclick="appendvalue('7')">
+        <input type="button" value="8" onclick="appendvalue('8')">
+        <input type="button" value="9" onclick="appendvalue('9')">
+        <input type="button" value="+" onclick="appendvalue('+')">
+        </div>
+
+        <div>
+            <input type="button" value="4" onclick="appendvalue('4')">
+            <input type="button" value="5" onclick="appendvalue('5')">
+            <input type="button" value="6" onclick="appendvalue('6')">
+            <input type="button" value="-" onclick="appendvalue('-')">
+        </div>
+
+        <div>
+            <input type="button" value="1" onclick="appendvalue('1')">
+            <input type="button" value="2" onclick="appendvalue('2')">
+            <input type="button" value="3" onclick="appendvalue('3')">
+            <input type="button" value="/" onclick="appendvalue('/')">
+        </div>
+
+        <div>
+            <input type="button" value="." onclick="appendvalue('.')">
+            <input type="button" value="0" onclick="appendvalue('0')">
+            <input type="button" value="=" onclick="calculateresult('=')">
+            <input type="button" value="*" onclick="appendvalue('*')">
+        </div>
+    </div>
+    <script>
+        // accessing input field values
+        const var1 = document.getElementById("result");
+
+        // function to display entered functionality on input field
+        function appendvalue(value){
+            var1.value +=value;
+        }
+        // functio to clear all data when pressed on AC button
+        function clearall(){
+            var1.value="";
+        }
+
+        // function to evaluate the result
+        function calculateresult(){
+            var1.value = eval(var1.value)
+        }
+    </script>
+</body>
+</html>
