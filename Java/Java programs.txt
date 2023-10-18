@@ -1,0 +1,133 @@
+//1.Create an array with the values (1, 2, 3, 4, 5, 6, 7) and shuffle it
+
+package com.Programs;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class HelloWorld {
+	 public void shuffling(int[] array1)
+	    {
+	    int index, temp;
+	    Random random = new Random();
+	    for (int i = array1.length - 1; i > 0; i--)
+	    {
+	        index = random.nextInt(i + 1);
+	        temp = array1[index];
+	        array1[index] = array1[i];
+	        array1[i] = temp;
+	    }
+	    
+	    }
+		public static void main(String[] args) {
+	    HelloWorld h = new HelloWorld();
+	    int[] arr = {1,2,3,4,5,6,7};
+	    h.shuffling(arr);
+	    System.out.println(Arrays.toString(arr));
+	}
+}
+
+
+
+//2.Enter a Roman Number as input and convert it to an integer. (Example: IX = 9)
+
+package com.Programs;
+
+import java.util.Scanner;
+
+public class RomanToInt {
+	public static void main(String[] args) {
+		 RomanToInt rt = new  RomanToInt();
+		 Scanner sc = new Scanner(System.in);
+		 System.out.println("enter tge roman number");
+		 String roman = sc.nextLine();
+		 System.out.println(rt.romanToInt(roman));
+		 
+	}
+	
+	 public int returnValue(char romanChar) {
+		switch(romanChar) {
+		case 'I':
+			return 1;
+		case 'V':
+			return 5;
+			
+		case 'X':
+			return 10;
+			
+		case 'L':
+			System.out.println(50);
+			break;
+			
+		case 'C':
+			return 100;
+		
+		case 'D':
+			return 500;
+			
+		case 'M':
+			return 1000;
+		default:
+			return 0;
+		}
+		return -1;
+	}
+	
+	public int romanToInt(String roman) {
+		int sum =0;
+		for(int i = 0; i<roman.length();i++) {
+			int s1 = returnValue(roman.charAt(i));
+			if(i+1 < roman.length()) {
+				int s2 = returnValue(roman.charAt(i+1));
+				
+				if(s1 >= s2) {
+					sum = sum+s1;
+				}
+				
+				else {
+					sum = sum-s1;
+				}
+			}
+			
+			else {
+				sum = sum+s1;
+			}
+		}
+		return sum;
+	}
+}
+
+
+/*3.Check if the input is pangram or not. (A pangram is a sentence that contains all the 
+alphabets from A to Z)*/
+
+package com.Programs;
+
+import java.util.Scanner;
+
+public class Pangram {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the String: ");
+		
+		String string1 = sc.nextLine();
+		string1 = string1.replaceAll(" ","").toLowerCase();
+		
+		String s = "";
+		
+		for(char i='a';i<='z';i++) {
+			if(string1.indexOf(i)!=-1) {
+				s=s+i;
+				
+			}
+		}
+		
+		if(s.length()==26) {
+			System.out.println("Pangram");
+		}
+		
+		else {
+			System.out.println("Not Pangram");
+		}
+	}
+}

@@ -1,0 +1,25 @@
+<!-- Take a sentence as an input and reverse every word in that sentence. 
+Example - This is a sunny day > shiT si a ynnus yad.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let string1 = "This is a Javascript language";
+        let arr1 = string1.split(" ");
+        let finalstr=""
+        for(word of arr1){
+            let arr2=word.split("").reverse();
+            let var2 = arr2.join("");
+            finalstr+=var2+" "
+        }
+        console.log(finalstr)
+    </script>
+</body>
+</html>
